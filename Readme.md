@@ -1,7 +1,7 @@
 # Личный проект «Readme»
 
 * Студент: [Daniel Vinogradov](https://up.htmlacademy.ru/php/12/user/473761).
-* Наставник: `Неизвестно`.
+* Наставник: [Антон Попов](https://htmlacademy.ru/profile/joker).
 
 ---
 
