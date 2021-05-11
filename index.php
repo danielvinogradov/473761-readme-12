@@ -1,7 +1,19 @@
 <?php
 $is_auth = rand(0, 1);
 
-$user_name = ''; // укажите здесь ваше имя
+/**
+ * Показывать ли навигацию в хедере: показывается для авторизованных пользователей.
+ * @global bool $GLOBALS['show_header_nav']
+ * @name $show_header_nav
+ */
+$show_header_nav = $is_auth === 1;
+
+/**
+ * Захардкоженное имя пользователя.
+ * @global string $GLOBALS['user_name']
+ * @name $user_name
+ */
+$user_name = 'Данил';
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -41,6 +53,7 @@ $user_name = ''; // укажите здесь ваше имя
         </form>
         <div class="header__nav-wrapper">
             <!-- здесь должен быть PHP код, который показывает следующий тег по условию -->
+            <?php if ($show_header_nav): ?>
             <nav class="header__nav">
                 <ul class="header__my-nav">
                     <li class="header__my-page header__my-page--popular">
@@ -68,7 +81,7 @@ $user_name = ''; // укажите здесь ваше имя
                             </div>
                             <div class="header__profile-name">
                                 <span>
-                                    <!--здесь должно быть имя пользователя-->
+                                    <?php if ($user_name) echo $user_name; ?>
                                 </span>
                                 <svg class="header__link-arrow" width="10" height="6">
                                     <use xlink:href="#icon-arrow-right-ad"></use>
@@ -110,6 +123,7 @@ $user_name = ''; // укажите здесь ваше имя
                     </li>
                 </ul>
             </nav>
+            <?php endif; ?>
         </div>
     </div>
 </header>
