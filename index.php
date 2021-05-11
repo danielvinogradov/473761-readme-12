@@ -302,13 +302,8 @@ function cut_string(string $str, int $max_length = 300): string
 
                             <?php elseif ($post['type'] === 'post-text'): ?>
                                 <!--содержимое для поста-текста-->
-                                <?php
-                                    $max_length = 300;
-                                    $show_more_link = strlen($post['content']) > $max_length; // показывать ли ссылку "читать далее"
-                                    $post_text_to_show = cut_string($post['content']);
-                                ?>
-                                <p><?= $post_text_to_show; ?></p>
-                                <?php if ($show_more_link): ?>
+                                <p><?= cut_string($post['content']); ?></p>
+                                <?php if (cut_string($post['content']) !== $post['content']): ?>
                                 <div class="post-text__more-link-wrapper">
                                     <a class="post-text__more-link" href="#">Читать далее</a>
                                 </div>
