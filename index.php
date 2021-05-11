@@ -50,6 +50,22 @@ $popular_posts = [
         'avatar' => 'userpic.jpg',
     ],
 ];
+
+/**
+ * Функция для обрезания строки до заданного значения и добавления многоточия.
+ * Если длина строки не превышает заданный максимум, то возвращается сама строка.
+ * @param string $str
+ * @param int $max_length
+ * @return string
+ */
+function cut_string(string $str, int $max_length = 300): string
+{
+    if (strlen($str) > $max_length) {
+        $s = substr($str,0,  $max_length);
+        $s = strchr(strrev($s), ' ');
+        return trim(strrev($s)) . '...';
+    } else return $str;
+}
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -286,7 +302,17 @@ $popular_posts = [
 
                             <?php elseif ($post['type'] === 'post-text'): ?>
                                 <!--содержимое для поста-текста-->
-                                <p><?= $post['content']; ?></p>
+                                <?php
+                                    $max_length = 300;
+                                    $show_more_link = strlen($post['content']) > $max_length; // показывать ли ссылку "читать далее"
+                                    $post_text_to_show = cut_string($post['content']);
+                                ?>
+                                <p><?= $post_text_to_show; ?></p>
+                                <?php if ($show_more_link): ?>
+                                <div class="post-text__more-link-wrapper">
+                                    <a class="post-text__more-link" href="#">Читать далее</a>
+                                </div>
+                                <?php endif; ?>
 
                             <?php elseif ($post['type'] === 'post-photo'): ?>
                                 <!--содержимое для поста-фото-->
