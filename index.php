@@ -2,13 +2,6 @@
 $is_auth = rand(0, 1);
 
 /**
- * Показывать ли навигацию в хедере: показывается для авторизованных пользователей.
- * @global bool $GLOBALS['show_header_nav']
- * @name $show_header_nav
- */
-$show_header_nav = $is_auth === 1;
-
-/**
  * Захардкоженное имя пользователя.
  * @global string $GLOBALS['user_name']
  * @name $user_name
@@ -53,7 +46,7 @@ $user_name = 'Данил';
         </form>
         <div class="header__nav-wrapper">
             <!-- здесь должен быть PHP код, который показывает следующий тег по условию -->
-            <?php if ($show_header_nav): ?>
+            <?php if ($is_auth === 1): ?>
             <nav class="header__nav">
                 <ul class="header__my-nav">
                     <li class="header__my-page header__my-page--popular">
@@ -81,7 +74,7 @@ $user_name = 'Данил';
                             </div>
                             <div class="header__profile-name">
                                 <span>
-                                    <?php if ($user_name) echo $user_name; ?>
+                                    <?= $user_name; ?>
                                 </span>
                                 <svg class="header__link-arrow" width="10" height="6">
                                     <use xlink:href="#icon-arrow-right-ad"></use>
