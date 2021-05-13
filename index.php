@@ -60,10 +60,9 @@ $popular_posts = [
  */
 function cut_string(string $str, int $max_length = 300): string
 {
-    if (strlen($str) > $max_length) {
-        $s = substr($str,0,  $max_length);
-        $s = strchr(strrev($s), ' ');
-        return trim(strrev($s)) . '...';
+    if (mb_strlen($str) > $max_length) {
+        $s = mb_strcut($str,0,  $max_length);
+        return mb_strrchr($s, ' ', true) . '...';
     }
 
     return $str;
