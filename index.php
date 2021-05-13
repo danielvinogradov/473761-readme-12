@@ -1,76 +1,19 @@
 <?php
-$is_auth = rand(0, 1);
+require_once('helpers.php');
+require_once('utils/cut_string.php');
+require_once('mock/popular_posts.php');
+require_once('mock/is_auth.php');
+require_once('mock/user_name.php');
 
-/**
- * Захардкоженное имя пользователя.
- * @global string $GLOBALS ['user_name']
- * @name $user_name
- */
-$user_name = 'Данил';
-
-/**
- * Популярные посты.
- * @global array[] $GLOBALS ['popular_posts']
- * @name $popular_posts
- */
-$popular_posts = [
-    [
-        'title' => 'Цитата',
-        'type' => 'post-quote',
-        'content' => 'Мы в жизни любим только раз, а после ищем лишь похожих',
-        'username' => 'Лариса',
-        'avatar' => 'userpic-larisa-small.jpg',
-    ],
-    [
-        'title' => 'Игра престолов',
-        'type' => 'post-text',
-        'content' => 'Не могу дождаться начала финального сезона своего любимого сериала!',
-        'username' => 'Владик',
-        'avatar' => 'userpic.jpg',
-    ],
-    [
-        'title' => 'Наконец, обработал фотки!',
-        'type' => 'post-photo',
-        'content' => 'rock-medium.jpg',
-        'username' => 'Виктор',
-        'avatar' => 'userpic-mark.jpg',
-    ],
-    [
-        'title' => 'Моя мечта',
-        'type' => 'post-photo',
-        'content' => 'coast-medium.jpg',
-        'username' => 'Лариса',
-        'avatar' => 'userpic-larisa-small.jpg',
-    ],
-    [
-        'title' => 'Лучшие курсы',
-        'type' => 'post-link',
-        'content' => 'www.htmlacademy.ru',
-        'username' => 'Владик',
-        'avatar' => 'userpic.jpg',
-    ],
+$page_content_options = [
+    'posts' => $popular_posts,
 ];
 
 /**
- * Функция для обрезания строки до заданного значения и добавления многоточия.
- * Если длина строки не превышает заданный максимум, то возвращается сама строка.
- * @param string $str
- * @param int $max_length
+ * Строка с контентом страницы. Что внутри <main>.
  * @return string
  */
-function cut_string(string $str, int $max_length = 300): string
-{
-    if (mb_strlen($str) > $max_length) {
-        $s = mb_strcut($str, 0, $max_length);
-        return mb_strrchr($s, ' ', true) . '...';
-    }
-
-    return $str;
-}
-
-require_once ('helpers.php');
-
-$page_content = include_template('main.php', ['posts' => $popular_posts]);
+$page_content = include_template('main.php', $page_content_options);
 
 $layout_content_options = [
     'meta' => [
@@ -80,6 +23,11 @@ $layout_content_options = [
     'is_auth' => $is_auth,
     'user_name' => $user_name,
 ];
+
+/**
+ * Все содержимое страницы с layout
+ * @return string
+ */
 $layout_content = include_template('layout.php', $layout_content_options);
 
 print($layout_content);
