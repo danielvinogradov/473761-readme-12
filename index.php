@@ -64,7 +64,9 @@ function cut_string(string $str, int $max_length = 300): string
         $s = substr($str,0,  $max_length);
         $s = strchr(strrev($s), ' ');
         return trim(strrev($s)) . '...';
-    } else return $str;
+    }
+
+    return $str;
 }
 ?>
 <!DOCTYPE html>
