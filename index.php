@@ -269,13 +269,12 @@ function cut_string(string $str, int $max_length = 300): string
         </div>
         <div class="popular__posts">
             <?php foreach ($popular_posts as $post): ?>
-                <article class="popular__post post <?php if (isset($post['type'])) echo $post['type'] ?>">
+                <article class="popular__post post <?= $post['type'] ?>">
                     <header class="post__header">
-                        <h2><?php if (isset($post['title'])) echo $post['title'] ?></h2>
+                        <h2><?= $post['title'] ?></h2>
                     </header>
                     <div class="post__main">
                         <!--здесь содержимое карточки-->
-                        <?php if (isset($post['type'])): ?>
                             <?php if ($post['type'] === 'post-quote'): ?>
                                 <!--содержимое для поста-цитаты-->
                                 <blockquote>
@@ -294,7 +293,7 @@ function cut_string(string $str, int $max_length = 300): string
                                                 <img src="https://www.google.com/s2/favicons?domain=vitadental.ru" alt="Иконка">
                                             </div>
                                             <div class="post-link__info">
-                                                <h3><?php if (isset($post['title'])) echo $post['title']; ?></h3>
+                                                <h3><?= $post['title'] ?></h3>
                                             </div>
                                         </div>
                                         <span><?= $post['content']; ?></span>
@@ -333,17 +332,16 @@ function cut_string(string $str, int $max_length = 300): string
 
                             <?php endif; ?>
 
-                        <?php endif; ?>
                     </div>
                     <footer class="post__footer">
                         <div class="post__author">
                             <a class="post__author-link" href="#" title="Автор">
                                 <div class="post__avatar-wrapper">
                                     <!--укажите путь к файлу аватара-->
-                                    <img class="post__author-avatar" src="img/<?php if (isset($post['avatar'])) echo $post['avatar'] ?>" alt="Аватар пользователя">
+                                    <img class="post__author-avatar" src="img/<?= $post['avatar'] ?>" alt="Аватар пользователя">
                                 </div>
                                 <div class="post__info">
-                                    <b class="post__author-name"><?php if (isset($post['username'])) echo $post['username'] ?></b>
+                                    <b class="post__author-name"><?= $post['username'] ?></b>
                                     <time class="post__time" datetime="">дата</time>
                                 </div>
                             </a>
