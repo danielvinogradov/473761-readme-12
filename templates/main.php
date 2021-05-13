@@ -85,7 +85,11 @@
         </div>
     </div>
     <div class="popular__posts">
-        <?php foreach ($posts as $post): ?>
+        <?php
+        require_once('utils/format_post_date.php');
+        require_once('helpers.php');
+        ?>
+        <?php foreach ($posts as $key => $post): ?>
             <article class="popular__post post <?= $post['type'] ?>">
                 <header class="post__header">
                     <h2><?= htmlspecialchars($post['title']) ?></h2>
@@ -163,7 +167,10 @@
                             </div>
                             <div class="post__info">
                                 <b class="post__author-name"><?= htmlspecialchars($post['username']) ?></b>
-                                <time class="post__time" datetime="">дата</time>
+                                <?php $date = generate_random_date($key); ?>
+                                <time class="post__time" datetime="<?= $date ?>" title="<?= format_post_date($date) ?>">
+                                    <?= format_post_date($date, 'text') ?>
+                                </time>
                             </div>
                         </a>
                     </div>
