@@ -88,7 +88,7 @@
         <?php foreach ($posts as $post): ?>
             <article class="popular__post post <?= $post['type'] ?>">
                 <header class="post__header">
-                    <h2><?= $post['title'] ?></h2>
+                    <h2><?= htmlspecialchars($post['title']) ?></h2>
                 </header>
                 <div class="post__main">
                     <!--здесь содержимое карточки-->
@@ -96,7 +96,7 @@
                         <!--содержимое для поста-цитаты-->
                         <blockquote>
                             <p>
-                                <?= $post['content']; ?>
+                                <?= htmlspecialchars($post['content']) ?>
                             </p>
                             <cite>Неизвестный Автор</cite>
                         </blockquote>
@@ -112,17 +112,17 @@
                                              alt="Иконка">
                                     </div>
                                     <div class="post-link__info">
-                                        <h3><?= $post['title'] ?></h3>
+                                        <h3><?= htmlspecialchars($post['title']) ?></h3>
                                     </div>
                                 </div>
-                                <span><?= $post['content']; ?></span>
+                                <span><?= htmlspecialchars($post['content']) ?></span>
                             </a>
                         </div>
 
                     <?php elseif ($post['type'] === 'post-text'): ?>
                         <!--содержимое для поста-текста-->
-                        <p><?= cut_string($post['content']); ?></p>
-                        <?php if (cut_string($post['content']) !== $post['content']): ?>
+                        <p><?= htmlspecialchars(cut_string($post['content'])) ?></p>
+                        <?php if (htmlspecialchars(cut_string($post['content'])) !== htmlspecialchars($post['content'])): ?>
                             <div class="post-text__more-link-wrapper">
                                 <a class="post-text__more-link" href="#">Читать далее</a>
                             </div>
@@ -131,7 +131,7 @@
                     <?php elseif ($post['type'] === 'post-photo'): ?>
                         <!--содержимое для поста-фото-->
                         <div class="post-photo__image-wrapper">
-                            <img src="img/<?= $post['content'] ?>" alt="Фото от пользователя" width="360"
+                            <img src="img/<?= htmlspecialchars($post['content']) ?>" alt="Фото от пользователя" width="360"
                                  height="240">
                         </div>
 
@@ -162,7 +162,7 @@
                                      alt="Аватар пользователя">
                             </div>
                             <div class="post__info">
-                                <b class="post__author-name"><?= $post['username'] ?></b>
+                                <b class="post__author-name"><?= htmlspecialchars($post['username']) ?></b>
                                 <time class="post__time" datetime="">дата</time>
                             </div>
                         </a>
