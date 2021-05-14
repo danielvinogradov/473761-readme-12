@@ -1,11 +1,11 @@
 <?php
+require_once('config.php');
 require_once('helpers.php');
 require_once('utils/cut_string.php');
 require_once('mock/popular_posts.php');
 require_once('mock/is_auth.php');
 require_once('mock/user_name.php');
 
-date_default_timezone_set('Europe/Moscow');
 
 $page_content_options = [
     'posts' => $popular_posts,
