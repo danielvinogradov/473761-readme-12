@@ -85,10 +85,6 @@
         </div>
     </div>
     <div class="popular__posts">
-        <?php
-        require_once('utils/format_post_date.php');
-        require_once('helpers.php');
-        ?>
         <?php foreach ($posts as $key => $post): ?>
             <article class="popular__post post <?= $post['type'] ?>">
                 <header class="post__header">
