@@ -37,6 +37,6 @@ function format_post_date(string $date, string $type = 'default'): string
             $plural_form = get_noun_plural_form($num, 'минута', 'минуты', 'минут');
         }
 
-        return "{$num} {$plural_form} назад";
+        return "$num $plural_form назад";
     }
 }
