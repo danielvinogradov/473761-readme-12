@@ -1,6 +1,8 @@
 <?php
+require_once('config.php');
 require_once('helpers.php');
 require_once('utils/cut_string.php');
+require_once('utils/format_post_date.php');
 require_once('mock/popular_posts.php');
 require_once('mock/is_auth.php');
 require_once('mock/user_name.php');
