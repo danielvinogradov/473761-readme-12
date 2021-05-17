@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>readme: профиль</title>
-    <link rel="stylesheet" href="css/main.css">
+    <title>readme: моя лента (нет публикаций)</title>
+    <link rel="stylesheet" href="../css/main.css">
   </head>
   <body class="page">
     <div style="display: none">
@@ -16,7 +16,7 @@
       <div class="header__wrapper container">
         <div class="header__logo-wrapper">
           <a class="header__logo-link" href="main.html">
-            <img class="header__logo" src="img/logo.svg" alt="Логотип readme" width="128" height="24">
+            <img class="header__logo" src="../img/logo.svg" alt="Логотип readme" width="128" height="24">
           </a>
           <p class="header__topic">
             micro blogging
@@ -43,7 +43,7 @@
                 </a>
               </li>
               <li class="header__my-page header__my-page--feed">
-                <a class="header__page-link" href="feed.html" title="Моя лента">
+                <a class="header__page-link header__page-link--active" title="Моя лента">
                   <span class="visually-hidden">Моя лента</span>
                 </a>
               </li>
@@ -57,7 +57,7 @@
               <li class="header__profile">
                 <a class="header__profile-link" href="#">
                   <div class="header__avatar-wrapper">
-                    <img class="header__profile-avatar" src="img/userpic-medium.jpg" alt="Аватар профиля">
+                    <img class="header__profile-avatar" src="../img/userpic-medium.jpg" alt="Аватар профиля">
                   </div>
                   <div class="header__profile-name">
                     <span>Антон Глуханько</span>
@@ -84,7 +84,6 @@
                           </span>
                         </a>
                       </li>
-
                       <li class="header__profile-nav-item">
                         <a class="header__profile-nav-link" href="#">
                           <span class="header__profile-nav-text">
@@ -105,196 +104,95 @@
       </div>
     </header>
 
-    <main class="page__main page__main--profile">
-      <h1 class="visually-hidden">Профиль</h1>
-      <div class="profile profile--likes">
-        <div class="profile__user-wrapper">
-          <div class="profile__user user container">
-            <div class="profile__user-info user__info">
-              <div class="profile__avatar user__avatar">
-                <img class="profile__picture user__picture" src="img/userpic-medium.jpg" alt="Аватар пользователя">
-              </div>
-              <div class="profile__name-wrapper user__name-wrapper">
-                <span class="profile__name user__name">Антон<br> Глуханько</span>
-                <time class="profile__user-time user__time" datetime="2014-03-20">5 лет на сайте</time>
-              </div>
-            </div>
-            <div class="profile__rating user__rating">
-              <p class="profile__rating-item user__rating-item user__rating-item--publications">
-                <span class="user__rating-amount">556</span>
-                <span class="profile__rating-text user__rating-text">публикаций</span>
-              </p>
-              <p class="profile__rating-item user__rating-item user__rating-item--subscribers">
-                <span class="user__rating-amount">1856</span>
-                <span class="profile__rating-text user__rating-text">подписчиков</span>
-              </p>
-            </div>
-            <div class="profile__user-buttons user__buttons">
-              <button class="profile__user-button user__button user__button--subscription button button--main" type="button">Подписаться</button>
-              <a class="profile__user-button user__button user__button--writing button button--green" href="#">Сообщение</a>
+    <main class="page__main page__main--feed">
+      <div class="container">
+        <h1 class="page__title page__title--feed">Моя лента</h1>
+      </div>
+      <div class="page__main-wrapper container">
+        <section class="feed">
+          <h2 class="visually-hidden">Лента</h2>
+          <div class="feed__main-wrapper">
+            <div class="feed__wrapper">
+
             </div>
           </div>
-        </div>
-        <div class="profile__tabs-wrapper tabs">
-          <div class="container">
-            <div class="profile__tabs filters">
-              <b class="profile__tabs-caption filters__caption">Показать:</b>
-              <ul class="profile__tabs-list filters__list tabs__list">
-                <li class="profile__tabs-item filters__item tabs__item">
-                  <a class="profile__tabs-link filters__button button" href="#">Посты</a>
-                </li>
-                <li class="profile__tabs-item filters__item tabs__item">
-                  <a class="profile__tabs-link filters__button filters__button--active button">Лайки</a>
-                </li>
-                <li class="profile__tabs-item filters__item tabs__item">
-                  <a class="profile__tabs-link filters__button button" href="#">Подписки</a>
-                </li>
-              </ul>
-            </div>
-            <div class="profile__tab-content">
-              <section class="profile__likes tabs__content tabs__content--active">
-                <h2 class="visually-hidden">Лайки</h2>
-                <ul class="profile__likes-list">
-                  <li class="post-mini post-mini--photo post user">
-                    <div class="post-mini__user-info user__info">
-                      <div class="post-mini__avatar user__avatar">
-                        <a class="user__avatar-link" href="#">
-                          <img class="post-mini__picture user__picture" src="img/userpic-petro.jpg" alt="Аватар пользователя">
-                        </a>
-                      </div>
-                      <div class="post-mini__name-wrapper user__name-wrapper">
-                        <a class="post-mini__name user__name" href="#">
-                          <span>Петр Демин</span>
-                        </a>
-                        <div class="post-mini__action">
-                          <span class="post-mini__activity user__additional">Лайкнул вашу публикацию</span>
-                          <time class="post-mini__time user__additional" datetime="2014-03-20T20:20">5 минут назад</time>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="post-mini__preview">
-                      <a class="post-mini__link" href="#" title="Перейти на публикацию">
-                        <div class="post-mini__image-wrapper">
-                          <img class="post-mini__image" src="img/rock-small.png" width="109" height="109" alt="Превью публикации">
-                        </div>
-                        <span class="visually-hidden">Фото</span>
-                      </a>
-                    </div>
-                  </li>
-                  <li class="post-mini post-mini--text post user">
-                    <div class="post-mini__user-info user__info">
-                      <div class="post-mini__avatar user__avatar">
-                        <a class="user__avatar-link" href="#">
-                          <img class="post-mini__picture user__picture" src="img/userpic-petro.jpg" alt="Аватар пользователя">
-                        </a>
-                      </div>
-                      <div class="post-mini__name-wrapper user__name-wrapper">
-                        <a class="post-mini__name user__name" href="#">
-                          <span>Петр Демин</span>
-                        </a>
-                        <div class="post-mini__action">
-                          <span class="post-mini__activity user__additional">Лайкнул вашу публикацию</span>
-                          <time class="post-mini__time user__additional" datetime="2014-03-20T20:05">15 минут назад</time>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="post-mini__preview">
-                      <a class="post-mini__link" href="#" title="Перейти на публикацию">
-                        <span class="visually-hidden">Текст</span>
-                        <svg class="post-mini__preview-icon" width="20" height="21">
-                          <use xlink:href="#icon-filter-text"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </li>
-                  <li class="post-mini post-mini--video post user">
-                    <div class="post-mini__user-info user__info">
-                      <div class="post-mini__avatar user__avatar">
-                        <a class="user__avatar-link" href="#">
-                          <img class="post-mini__picture user__picture" src="img/userpic-petro.jpg" alt="Аватар пользователя">
-                        </a>
-                      </div>
-                      <div class="post-mini__name-wrapper user__name-wrapper">
-                        <a class="post-mini__name user__name" href="#">
-                          <span>Петр Демин</span>
-                        </a>
-                        <div class="post-mini__action">
-                          <span class="post-mini__activity user__additional">Лайкнул вашу публикацию</span>
-                          <time class="post-mini__time user__additional" datetime="2014-03-20T18:20">2 часа назад</time>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="post-mini__preview">
-                      <a class="post-mini__link" href="#" title="Перейти на публикацию">
-                        <div class="post-mini__image-wrapper">
-                          <img class="post-mini__image" src="img/coast-small.png" width="109" height="109" alt="Превью публикации">
-                          <span class="post-mini__play-big">
-                            <svg class="post-mini__play-big-icon" width="12" height="13">
-                              <use xlink:href="#icon-video-play-big"></use>
-                            </svg>
-                          </span>
-                        </div>
-                        <span class="visually-hidden">Видео</span>
-                      </a>
-                    </div>
-                  </li>
-                  <li class="post-mini post-mini--quote post user">
-                    <div class="post-mini__user-info user__info">
-                      <div class="post-mini__avatar user__avatar">
-                        <a class="user__avatar-link" href="#">
-                          <img class="post-mini__picture user__picture" src="img/userpic-petro.jpg" alt="Аватар пользователя">
-                        </a>
-                      </div>
-                      <div class="post-mini__name-wrapper user__name-wrapper">
-                        <a class="post-mini__name user__name" href="#">
-                          <span>Петр Демин</span>
-                        </a>
-                        <div class="post-mini__action">
-                          <span class="post-mini__activity user__additional">Лайкнул вашу публикацию</span>
-                          <time class="post-mini__time user__additional" datetime="2014-03-15T20:05">5 дней назад</time>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="post-mini__preview">
-                      <a class="post-mini__link" href="#" title="Перейти на публикацию">
-                        <span class="visually-hidden">Цитата</span>
-                        <svg class="post-mini__preview-icon" width="21" height="20">
-                          <use xlink:href="#icon-filter-quote"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </li>
-                  <li class="post-mini post-mini--link post user">
-                    <div class="post-mini__user-info user__info">
-                      <div class="post-mini__avatar user__avatar">
-                        <a class="user__avatar-link" href="#">
-                          <img class="post-mini__picture user__picture" src="img/userpic-petro.jpg" alt="Аватар пользователя">
-                        </a>
-                      </div>
-                      <div class="post-mini__name-wrapper user__name-wrapper">
-                        <a class="post-mini__name user__name" href="#">
-                          <span>Петр Демин</span>
-                        </a>
-                        <div class="post-mini__action">
-                          <span class="post-mini__activity user__additional">Лайкнул вашу публикацию</span>
-                          <time class="post-mini__time user__additional" datetime="2014-03-20T20:05">в далеком 2007-ом</time>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="post-mini__preview">
-                      <a class="post-mini__link" href="#" title="Перейти на публикацию">
-                        <span class="visually-hidden">Ссылка</span>
-                        <svg class="post-mini__preview-icon" width="21" height="18">
-                          <use xlink:href="#icon-filter-link"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </li>
-                </ul>
-              </section>
-            </div>
-          </div>
-        </div>
+          <ul class="feed__filters filters">
+            <li class="feed__filters-item filters__item">
+              <a class="filters__button filters__button--active" href="#">
+                <span>Все</span>
+              </a>
+            </li>
+            <li class="feed__filters-item filters__item">
+              <a class="filters__button filters__button--photo button" href="#">
+                <span class="visually-hidden">Фото</span>
+                <svg class="filters__icon" width="22" height="18">
+                  <use xlink:href="#icon-filter-photo"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="feed__filters-item filters__item">
+              <a class="filters__button filters__button--video button" href="#">
+                <span class="visually-hidden">Видео</span>
+                <svg class="filters__icon" width="24" height="16">
+                  <use xlink:href="#icon-filter-video"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="feed__filters-item filters__item">
+              <a class="filters__button filters__button--text button" href="#">
+                <span class="visually-hidden">Текст</span>
+                <svg class="filters__icon" width="20" height="21">
+                  <use xlink:href="#icon-filter-text"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="feed__filters-item filters__item">
+              <a class="filters__button filters__button--quote button" href="#">
+                <span class="visually-hidden">Цитата</span>
+                <svg class="filters__icon" width="21" height="20">
+                  <use xlink:href="#icon-filter-quote"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="feed__filters-item filters__item">
+              <a class="filters__button filters__button--link button" href="#">
+                <span class="visually-hidden">Ссылка</span>
+                <svg class="filters__icon" width="21" height="18">
+                  <use xlink:href="#icon-filter-link"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </section>
+        <aside class="promo">
+          <article class="promo__block promo__block--barbershop">
+            <h2 class="visually-hidden">Рекламный блок</h2>
+            <p class="promo__text">
+              Все еще сидишь на окладе в офисе? Открой свой барбершоп по нашей франшизе!
+            </p>
+            <a class="promo__link" href="#">
+              Подробнее
+            </a>
+          </article>
+          <article class="promo__block promo__block--technomart">
+            <h2 class="visually-hidden">Рекламный блок</h2>
+            <p class="promo__text">
+              Товары будущего уже сегодня в онлайн-сторе Техномарт!
+            </p>
+            <a class="promo__link" href="#">
+              Перейти в магазин
+            </a>
+          </article>
+          <article class="promo__block">
+            <h2 class="visually-hidden">Рекламный блок</h2>
+            <p class="promo__text">
+              Здесь<br> могла быть<br> ваша реклама
+            </p>
+            <a class="promo__link" href="#">
+              Разместить
+            </a>
+          </article>
+        </aside>
       </div>
     </main>
 
@@ -341,7 +239,7 @@
               </li>
             </ul>
             <div class="footer__copyright">
-              <a class="footer__copyright-link" href="#">
+              <a class="footer__copyright-link" href="https://htmlacademy.ru">
                 <span>Разработано HTML Academy</span>
                 <svg class="footer__copyright-logo" width="27" height="34">
                   <use xlink:href="#icon-htmlacademy"></use>
@@ -352,5 +250,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="../js/main.js"></script>
   </body>
 </html>

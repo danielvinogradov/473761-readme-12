@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>readme: страница результатов поиска</title>
-    <link rel="stylesheet" href="css/main.css">
+    <title>readme: моя лента</title>
+    <link rel="stylesheet" href="../css/main.css">
   </head>
   <body class="page">
     <div style="display: none">
@@ -16,7 +16,7 @@
       <div class="header__wrapper container">
         <div class="header__logo-wrapper">
           <a class="header__logo-link" href="main.html">
-            <img class="header__logo" src="img/logo.svg" alt="Логотип readme" width="128" height="24">
+            <img class="header__logo" src="../img/logo.svg" alt="Логотип readme" width="128" height="24">
           </a>
           <p class="header__topic">
             micro blogging
@@ -43,7 +43,7 @@
                 </a>
               </li>
               <li class="header__my-page header__my-page--feed">
-                <a class="header__page-link" href="feed.html" title="Моя лента">
+                <a class="header__page-link header__page-link--active" title="Моя лента">
                   <span class="visually-hidden">Моя лента</span>
                 </a>
               </li>
@@ -57,7 +57,7 @@
               <li class="header__profile">
                 <a class="header__profile-link" href="#">
                   <div class="header__avatar-wrapper">
-                    <img class="header__profile-avatar" src="img/userpic-medium.jpg" alt="Аватар профиля">
+                    <img class="header__profile-avatar" src="../img/userpic-medium.jpg" alt="Аватар профиля">
                   </div>
                   <div class="header__profile-name">
                     <span>Антон Глуханько</span>
@@ -96,7 +96,7 @@
                 </div>
               </li>
               <li>
-                <a class="header__post-button button button--transparent" href="#">Пост</a>
+                <a class="header__post-button button button--transparent" href="adding-post.html">Пост</a>
               </li>
             </ul>
           </nav>
@@ -104,24 +104,20 @@
       </div>
     </header>
 
-    <main class="page__main page__main--search-results">
-      <h1 class="visually-hidden">Страница результатов поиска</h1>
-      <section class="search">
-        <h2 class="visually-hidden">Результаты поиска</h2>
-        <div class="search__query-wrapper">
-          <div class="search__query container">
-            <span>Вы искали:</span>
-            <span class="search__query-text">#photooftheday</span>
-          </div>
-        </div>
-        <div class="search__results-wrapper">
-          <div class="container">
-            <div class="search__content">
-              <article class="search__post post post-photo">
+    <main class="page__main page__main--feed">
+      <div class="container">
+        <h1 class="page__title page__title--feed">Моя лента</h1>
+      </div>
+      <div class="page__main-wrapper container">
+        <section class="feed">
+          <h2 class="visually-hidden">Лента</h2>
+          <div class="feed__main-wrapper">
+            <div class="feed__wrapper">
+              <article class="feed__post post post-photo">
                 <header class="post__header post__author">
                   <a class="post__author-link" href="#" title="Автор">
                     <div class="post__avatar-wrapper">
-                      <img class="post__author-avatar" src="img/userpic-elvira.jpg" alt="Аватар пользователя" width="60" height="60">
+                      <img class="post__author-avatar" src="../img/userpic-elvira.jpg" alt="Аватар пользователя" width="60" height="60">
                     </div>
                     <div class="post__info">
                       <b class="post__author-name">Эльвира Хайпулинова</b>
@@ -132,7 +128,7 @@
                 <div class="post__main">
                   <h2><a href="#">Наконец, обработала фотки!</a></h2>
                   <div class="post-photo__image-wrapper">
-                    <img src="img/rock.jpg" alt="Фото от пользователя" width="760" height="396">
+                    <img src="../img/rock.jpg" alt="Фото от пользователя" width="760" height="396">
                   </div>
                 </div>
                 <footer class="post__footer post__indicators">
@@ -154,15 +150,22 @@
                       <span>25</span>
                       <span class="visually-hidden">количество комментариев</span>
                     </a>
+                    <a class="post__indicator post__indicator--repost button" href="#" title="Репост">
+                      <svg class="post__indicator-icon" width="19" height="17">
+                        <use xlink:href="#icon-repost"></use>
+                      </svg>
+                      <span>5</span>
+                      <span class="visually-hidden">количество репостов</span>
+                    </a>
                   </div>
                 </footer>
               </article>
 
-              <article class="search__post post post-text">
+              <article class="feed__post post post-text">
                 <header class="post__header post__author">
                   <a class="post__author-link" href="#" title="Автор">
                     <div class="post__avatar-wrapper">
-                      <img class="post__author-avatar" src="img/userpic-tanya.jpg" alt="Аватар пользователя">
+                      <img class="post__author-avatar" src="../img/userpic-tanya.jpg" alt="Аватар пользователя">
                     </div>
                     <div class="post__info">
                       <b class="post__author-name">Таня Фирсова</b>
@@ -196,15 +199,22 @@
                       <span>25</span>
                       <span class="visually-hidden">количество комментариев</span>
                     </a>
+                    <a class="post__indicator post__indicator--repost button" href="#" title="Репост">
+                      <svg class="post__indicator-icon" width="19" height="17">
+                        <use xlink:href="#icon-repost"></use>
+                      </svg>
+                      <span>5</span>
+                      <span class="visually-hidden">количество репостов</span>
+                    </a>
                   </div>
                 </footer>
               </article>
 
-              <article class="search__post post post-video">
+              <article class="feed__post post post-video">
                 <header class="post__header post__author">
                   <a class="post__author-link" href="#" title="Автор">
                     <div class="post__avatar-wrapper">
-                      <img class="post__author-avatar" src="img/userpic-petro.jpg" alt="Аватар пользователя">
+                      <img class="post__author-avatar" src="../img/userpic-petro.jpg" alt="Аватар пользователя">
                     </div>
                     <div class="post__info">
                       <b class="post__author-name">Петр Демин</b>
@@ -215,7 +225,7 @@
                 <div class="post__main">
                   <div class="post-video__block">
                     <div class="post-video__preview">
-                      <img src="img/coast.jpg" alt="Превью к видео" width="760" height="396">
+                      <img src="../img/coast.jpg" alt="Превью к видео" width="760" height="396">
                     </div>
                     <div class="post-video__control">
                       <button class="post-video__play post-video__play--paused button button--video" type="button"><span class="visually-hidden">Запустить видео</span></button>
@@ -255,15 +265,22 @@
                       <span>25</span>
                       <span class="visually-hidden">количество комментариев</span>
                     </a>
+                    <a class="post__indicator post__indicator--repost button" href="#" title="Репост">
+                      <svg class="post__indicator-icon" width="19" height="17">
+                        <use xlink:href="#icon-repost"></use>
+                      </svg>
+                      <span>5</span>
+                      <span class="visually-hidden">количество репостов</span>
+                    </a>
                   </div>
                 </footer>
               </article>
 
-              <article class="search__post post post-quote">
+              <article class="feed__post post post-quote">
                 <header class="post__header post__author">
                   <a class="post__author-link" href="#" title="Автор">
                     <div class="post__avatar-wrapper">
-                      <img class="post__author-avatar" src="img/userpic-mark.jpg" alt="Аватар пользователя">
+                      <img class="post__author-avatar" src="../img/userpic-mark.jpg" alt="Аватар пользователя">
                     </div>
                     <div class="post__info">
                       <b class="post__author-name">Марк Смолов</b>
@@ -298,15 +315,22 @@
                       <span>25</span>
                       <span class="visually-hidden">количество комментариев</span>
                     </a>
+                    <a class="post__indicator post__indicator--repost button" href="#" title="Репост">
+                      <svg class="post__indicator-icon" width="19" height="17">
+                        <use xlink:href="#icon-repost"></use>
+                      </svg>
+                      <span>5</span>
+                      <span class="visually-hidden">количество репостов</span>
+                    </a>
                   </div>
                 </footer>
               </article>
 
-              <article class="search__post post post-link">
+              <article class="feed__post post post-link">
                 <header class="post__header post__author">
                   <a class="post__author-link" href="#" title="Автор">
                     <div class="post__avatar-wrapper">
-                      <img class="post__author-avatar" src="img/userpic-larisa.jpg" alt="Аватар пользователя">
+                      <img class="post__author-avatar" src="../img/userpic-larisa.jpg" alt="Аватар пользователя">
                     </div>
                     <div class="post__info">
                       <b class="post__author-name">Лариса Роговая</b>
@@ -318,7 +342,7 @@
                   <div class="post-link__wrapper">
                     <a class="post-link__external" href="http://www.vitadental.ru" title="Перейти по ссылке">
                       <div class="post-link__icon-wrapper">
-                        <img src="img/logo-vita.jpg" alt="Иконка">
+                        <img src="../img/logo-vita.jpg" alt="Иконка">
                       </div>
                       <div class="post-link__info">
                         <h3>Стоматология «Вита»</h3>
@@ -349,13 +373,96 @@
                       <span>25</span>
                       <span class="visually-hidden">количество комментариев</span>
                     </a>
+                    <a class="post__indicator post__indicator--repost button" href="#" title="Репост">
+                      <svg class="post__indicator-icon" width="19" height="17">
+                        <use xlink:href="#icon-repost"></use>
+                      </svg>
+                      <span>5</span>
+                      <span class="visually-hidden">количество репостов</span>
+                    </a>
                   </div>
                 </footer>
               </article>
             </div>
           </div>
-        </div>
-      </section>
+          <ul class="feed__filters filters">
+            <li class="feed__filters-item filters__item">
+              <a class="filters__button filters__button--active" href="#">
+                <span>Все</span>
+              </a>
+            </li>
+            <li class="feed__filters-item filters__item">
+              <a class="filters__button filters__button--photo button" href="#">
+                <span class="visually-hidden">Фото</span>
+                <svg class="filters__icon" width="22" height="18">
+                  <use xlink:href="#icon-filter-photo"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="feed__filters-item filters__item">
+              <a class="filters__button filters__button--video button" href="#">
+                <span class="visually-hidden">Видео</span>
+                <svg class="filters__icon" width="24" height="16">
+                  <use xlink:href="#icon-filter-video"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="feed__filters-item filters__item">
+              <a class="filters__button filters__button--text button" href="#">
+                <span class="visually-hidden">Текст</span>
+                <svg class="filters__icon" width="20" height="21">
+                  <use xlink:href="#icon-filter-text"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="feed__filters-item filters__item">
+              <a class="filters__button filters__button--quote button" href="#">
+                <span class="visually-hidden">Цитата</span>
+                <svg class="filters__icon" width="21" height="20">
+                  <use xlink:href="#icon-filter-quote"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="feed__filters-item filters__item">
+              <a class="filters__button filters__button--link button" href="#">
+                <span class="visually-hidden">Ссылка</span>
+                <svg class="filters__icon" width="21" height="18">
+                  <use xlink:href="#icon-filter-link"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </section>
+        <aside class="promo">
+          <article class="promo__block promo__block--barbershop">
+            <h2 class="visually-hidden">Рекламный блок</h2>
+            <p class="promo__text">
+              Все еще сидишь на окладе в офисе? Открой свой барбершоп по нашей франшизе!
+            </p>
+            <a class="promo__link" href="#">
+              Подробнее
+            </a>
+          </article>
+          <article class="promo__block promo__block--technomart">
+            <h2 class="visually-hidden">Рекламный блок</h2>
+            <p class="promo__text">
+              Товары будущего уже сегодня в онлайн-сторе Техномарт!
+            </p>
+            <a class="promo__link" href="#">
+              Перейти в магазин
+            </a>
+          </article>
+          <article class="promo__block">
+            <h2 class="visually-hidden">Рекламный блок</h2>
+            <p class="promo__text">
+              Здесь<br> могла быть<br> ваша реклама
+            </p>
+            <a class="promo__link" href="#">
+              Разместить
+            </a>
+          </article>
+        </aside>
+      </div>
     </main>
 
     <footer class="footer">
@@ -413,6 +520,6 @@
       </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>

@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>readme: регистрация</title>
-  <link rel="stylesheet" href="css/main.css">
+  <title>readme: публикация</title>
+  <link rel="stylesheet" href="../css/main.css">
 </head>
 <body class="page">
 <div style="display: none">
@@ -16,7 +16,7 @@
   <div class="header__wrapper container">
     <div class="header__logo-wrapper">
       <a class="header__logo-link" href="main.html">
-        <img class="header__logo" src="img/logo.svg" alt="Логотип readme" width="128" height="24">
+        <img class="header__logo" src="../img/logo.svg" alt="Логотип readme" width="128" height="24">
       </a>
       <p class="header__topic">
         micro blogging
@@ -38,7 +38,7 @@
       <nav class="header__nav">
         <ul class="header__my-nav">
           <li class="header__my-page header__my-page--popular">
-            <a class="header__page-link" href="popular.html" title="Популярный контент">
+            <a class="header__page-link header__page-link--active" title="Популярный контент">
               <span class="visually-hidden">Популярный контент</span>
             </a>
           </li>
@@ -54,11 +54,49 @@
           </li>
         </ul>
         <ul class="header__user-nav">
-          <li class="header__authorization">
-            <a class="header__user-button header__authorization-button button" href="login.html">Вход</a>
+          <li class="header__profile">
+            <a class="header__profile-link" href="#">
+              <div class="header__avatar-wrapper">
+                <img class="header__profile-avatar" src="../img/userpic-medium.jpg" alt="Аватар профиля">
+              </div>
+              <div class="header__profile-name">
+                <span>Антон Глуханько</span>
+                <svg class="header__link-arrow" width="10" height="6">
+                  <use xlink:href="#icon-arrow-right-ad"></use>
+                </svg>
+              </div>
+            </a>
+            <div class="header__tooltip-wrapper">
+              <div class="header__profile-tooltip">
+                <ul class="header__profile-nav">
+                  <li class="header__profile-nav-item">
+                    <a class="header__profile-nav-link" href="#">
+                          <span class="header__profile-nav-text">
+                            Мой профиль
+                          </span>
+                    </a>
+                  </li>
+                  <li class="header__profile-nav-item">
+                    <a class="header__profile-nav-link" href="#">
+                          <span class="header__profile-nav-text">
+                            Сообщения
+                            <i class="header__profile-indicator">2</i>
+                          </span>
+                    </a>
+                  </li>
+                  <li class="header__profile-nav-item">
+                    <a class="header__profile-nav-link" href="#">
+                          <span class="header__profile-nav-text">
+                            Выход
+                          </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </li>
           <li>
-            <a class="header__user-button header__user-button--active header__register-button button">Регистрация</a>
+            <a class="header__post-button button button--transparent" href="adding-post.html">Пост</a>
           </li>
         </ul>
       </nav>
@@ -66,90 +104,147 @@
   </div>
 </header>
 
-<main class="page__main page__main--registration">
+<main class="page__main page__main--publication">
   <div class="container">
-    <h1 class="page__title page__title--registration">Регистрация</h1>
-  </div>
-  <section class="registration container">
-    <h2 class="visually-hidden">Форма регистрации</h2>
-    <form class="registration__form form" action="#" method="post" enctype="multipart/form-data">
-      <div class="form__text-inputs-wrapper">
-        <div class="form__text-inputs">
-          <div class="registration__input-wrapper form__input-wrapper">
-            <label class="registration__label form__label" for="registration-email">Электронная почта <span class="form__input-required">*</span></label>
-            <div class="form__input-section">
-              <input class="registration__input form__input" id="registration-email" type="email" name="email" placeholder="Укажите эл.почту">
-              <button class="form__error-button button" type="button">!<span class="visually-hidden">Информация об ошибке</span></button>
-              <div class="form__error-text">
-                <h3 class="form__error-title">Заголовок сообщения</h3>
-                <p class="form__error-desc">Текст сообщения об ошибке, подробно объясняющий, что не так.</p>
-              </div>
-            </div>
+    <h1 class="page__title page__title--publication">Наконец, обработала фотки!</h1>
+    <section class="post-details">
+      <h2 class="visually-hidden">Публикация</h2>
+      <div class="post-details__wrapper post-photo">
+        <div class="post-details__main-block post post--details">
+          <div class="post-details__image-wrapper post-photo__image-wrapper">
+            <img src="../img/rock-default.jpg" alt="Фото от пользователя" width="760" height="507">
           </div>
-          <div class="registration__input-wrapper form__input-wrapper">
-            <label class="registration__label form__label" for="registration-login">Логин <span class="form__input-required">*</span></label>
-            <div class="form__input-section">
-              <input class="registration__input form__input" id="registration-login" type="text" name="login" placeholder="Укажите логин">
-              <button class="form__error-button button" type="button">!<span class="visually-hidden">Информация об ошибке</span></button>
-              <div class="form__error-text">
-                <h3 class="form__error-title">Заголовок сообщения</h3>
-                <p class="form__error-desc">Текст сообщения об ошибке, подробно объясняющий, что не так.</p>
-              </div>
+          <div class="post__indicators">
+            <div class="post__buttons">
+              <a class="post__indicator post__indicator--likes button" href="#" title="Лайк">
+                <svg class="post__indicator-icon" width="20" height="17">
+                  <use xlink:href="#icon-heart"></use>
+                </svg>
+                <svg class="post__indicator-icon post__indicator-icon--like-active" width="20" height="17">
+                  <use xlink:href="#icon-heart-active"></use>
+                </svg>
+                <span>250</span>
+                <span class="visually-hidden">количество лайков</span>
+              </a>
+              <a class="post__indicator post__indicator--comments button" href="#" title="Комментарии">
+                <svg class="post__indicator-icon" width="19" height="17">
+                  <use xlink:href="#icon-comment"></use>
+                </svg>
+                <span>25</span>
+                <span class="visually-hidden">количество комментариев</span>
+              </a>
+              <a class="post__indicator post__indicator--repost button" href="#" title="Репост">
+                <svg class="post__indicator-icon" width="19" height="17">
+                  <use xlink:href="#icon-repost"></use>
+                </svg>
+                <span>5</span>
+                <span class="visually-hidden">количество репостов</span>
+              </a>
             </div>
+            <span class="post__view">500 просмотров</span>
           </div>
-          <div class="registration__input-wrapper form__input-wrapper">
-            <label class="registration__label form__label" for="registration-password">Пароль<span class="form__input-required">*</span></label>
-            <div class="form__input-section">
-              <input class="registration__input form__input" id="registration-password" type="password" name="password" placeholder="Придумайте пароль">
-              <button class="form__error-button button" type="button">!<span class="visually-hidden">Информация об ошибке</span></button>
-              <div class="form__error-text">
-                <h3 class="form__error-title">Заголовок сообщения</h3>
-                <p class="form__error-desc">Текст сообщения об ошибке, подробно объясняющий, что не так.</p>
-              </div>
-            </div>
-          </div>
-          <div class="registration__input-wrapper form__input-wrapper">
-            <label class="registration__label form__label" for="registration-password-repeat">Повтор пароля<span class="form__input-required">*</span></label>
-            <div class="form__input-section">
-              <input class="registration__input form__input" id="registration-password-repeat" type="password" name="password-repeat" placeholder="Повторите пароль">
-              <button class="form__error-button button" type="button">!<span class="visually-hidden">Информация об ошибке</span></button>
-              <div class="form__error-text">
-                <h3 class="form__error-title">Заголовок сообщения</h3>
-                <p class="form__error-desc">Текст сообщения об ошибке, подробно объясняющий, что не так.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="form__invalid-block">
-          <b class="form__invalid-slogan">Пожалуйста, исправьте следующие ошибки:</b>
-          <ul class="form__invalid-list">
-            <li class="form__invalid-item">Заголовок. Это поле должно быть заполнено.</li>
-            <li class="form__invalid-item">Цитата. Она не должна превышать 70 знаков.</li>
+          <ul class="post__tags">
+            <li><a href="#">#nature</a></li>
+            <li><a href="#">#globe</a></li>
+            <li><a href="#">#photooftheday</a></li>
+            <li><a href="#">#canon</a></li>
+            <li><a href="#">#landscape</a></li>
+            <li><a href="#">#щикарныйвид</a></li>
           </ul>
-        </div>
-      </div>
-      <div class="registration__input-file-container form__input-container form__input-container--file">
-        <div class="registration__input-file-wrapper form__input-file-wrapper">
-          <div class="registration__file-zone form__file-zone dropzone">
-            <input class="registration__input-file form__input-file" id="userpic-file" type="file" name="userpic-file" title=" ">
-            <div class="form__file-zone-text">
-              <span>Перетащите фото сюда</span>
+          <div class="comments">
+            <form class="comments__form form" action="#" method="post">
+              <div class="comments__my-avatar">
+                <img class="comments__picture" src="../img/userpic-medium.jpg" alt="Аватар пользователя">
+              </div>
+              <div class="form__input-section form__input-section--error">
+                <textarea class="comments__textarea form__textarea form__input" placeholder="Ваш комментарий"></textarea>
+                <label class="visually-hidden">Ваш комментарий</label>
+                <button class="form__error-button button" type="button">!</button>
+                <div class="form__error-text">
+                  <h3 class="form__error-title">Ошибка валидации</h3>
+                  <p class="form__error-desc">Это поле обязательно к заполнению</p>
+                </div>
+              </div>
+              <button class="comments__submit button button--green" type="submit">Отправить</button>
+            </form>
+            <div class="comments__list-wrapper">
+              <ul class="comments__list">
+                <li class="comments__item user">
+                  <div class="comments__avatar">
+                    <a class="user__avatar-link" href="#">
+                      <img class="comments__picture" src="../img/userpic-larisa.jpg" alt="Аватар пользователя">
+                    </a>
+                  </div>
+                  <div class="comments__info">
+                    <div class="comments__name-wrapper">
+                      <a class="comments__user-name" href="#">
+                        <span>Лариса Роговая</span>
+                      </a>
+                      <time class="comments__time" datetime="2019-03-20">1 ч назад</time>
+                    </div>
+                    <p class="comments__text">
+                      Красота!!!1!
+                    </p>
+                  </div>
+                </li>
+                <li class="comments__item user">
+                  <div class="comments__avatar">
+                    <a class="user__avatar-link" href="#">
+                      <img class="comments__picture" src="../img/userpic-larisa.jpg" alt="Аватар пользователя">
+                    </a>
+                  </div>
+                  <div class="comments__info">
+                    <div class="comments__name-wrapper">
+                      <a class="comments__user-name" href="#">
+                        <span>Лариса Роговая</span>
+                      </a>
+                      <time class="comments__time" datetime="2019-03-18">2 дня назад</time>
+                    </div>
+                    <p class="comments__text">
+                      Озеро Байкал – огромное древнее озеро в горах Сибири к северу от монгольской границы. Байкал считается самым глубоким озером в мире. Он окружен сетью пешеходных маршрутов, называемых Большой байкальской тропой. Деревня Листвянка, расположенная на западном берегу озера, – популярная отправная точка для летних экскурсий. Зимой здесь можно кататься на коньках и собачьих упряжках.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+              <a class="comments__more-link" href="#">
+                <span>Показать все комментарии</span>
+                <sup class="comments__amount">45</sup>
+              </a>
             </div>
           </div>
-          <button class="registration__input-file-button form__input-file-button button" type="button">
-            <span>Выбрать фото</span>
-            <svg class="registration__attach-icon form__attach-icon" width="10" height="20">
-              <use xlink:href="#icon-attach"></use>
-            </svg>
-          </button>
         </div>
-        <div class="registration__file form__file dropzone-previews">
-
+        <div class="post-details__user user">
+          <div class="post-details__user-info user__info">
+            <div class="post-details__avatar user__avatar">
+              <a class="post-details__avatar-link user__avatar-link" href="#">
+                <img class="post-details__picture user__picture" src="../img/userpic-elvira.jpg" alt="Аватар пользователя">
+              </a>
+            </div>
+            <div class="post-details__name-wrapper user__name-wrapper">
+              <a class="post-details__name user__name" href="#">
+                <span>Эльвира Хайпулинова</span>
+              </a>
+              <time class="post-details__time user__time" datetime="2014-03-20">5 лет на сайте</time>
+            </div>
+          </div>
+          <div class="post-details__rating user__rating">
+            <p class="post-details__rating-item user__rating-item user__rating-item--subscribers">
+              <span class="post-details__rating-amount user__rating-amount">1856</span>
+              <span class="post-details__rating-text user__rating-text">подписчиков</span>
+            </p>
+            <p class="post-details__rating-item user__rating-item user__rating-item--publications">
+              <span class="post-details__rating-amount user__rating-amount">556</span>
+              <span class="post-details__rating-text user__rating-text">публикаций</span>
+            </p>
+          </div>
+          <div class="post-details__user-buttons user__buttons">
+            <button class="user__button user__button--subscription button button--main" type="button">Подписаться</button>
+            <a class="user__button user__button--writing button button--green" href="#">Сообщение</a>
+          </div>
         </div>
       </div>
-      <button class="registration__submit button button--main" type="submit">Отправить</button>
-    </form>
-  </section>
+    </section>
+  </div>
 </main>
 
 <footer class="footer">
@@ -207,8 +302,6 @@
   </div>
 </footer>
 
-<script src="libs/dropzone.js"></script>
-<script src="js/dropzone-settings.js"></script>
-<script src="js/main.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>
