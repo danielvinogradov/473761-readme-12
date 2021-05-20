@@ -38,8 +38,8 @@ CREATE TABLE users
 CREATE TABLE content_type
 (
     id         INT AUTO_INCREMENT                                      NOT NULL,
-    name       ENUM ('Текст', 'Цитата', 'Картинка', 'Видео', 'Ссылка') NOT NULL,
-    class_name ENUM ('photo', 'video', 'text', 'quote', 'link')        NOT NULL,
+    name       VARCHAR(128) NOT NULL,
+    class_name VARCHAR(128)        NOT NULL,
 
     PRIMARY KEY (id)
 );
