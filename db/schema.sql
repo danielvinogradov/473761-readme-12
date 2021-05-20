@@ -18,7 +18,7 @@ USE readme;
  */
 CREATE TABLE users
 (
-    id                INT UNIQUE          NOT NULL AUTO_INCREMENT,
+    id                INT                 NOT NULL AUTO_INCREMENT,
     login             VARCHAR(128) UNIQUE NOT NULL,
     email             VARCHAR(128) UNIQUE NOT NULL,
     password          VARCHAR(128)        NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE users
  */
 CREATE TABLE content_type
 (
-    id         INT AUTO_INCREMENT UNIQUE                               NOT NULL,
+    id         INT AUTO_INCREMENT                                      NOT NULL,
     name       ENUM ('Текст', 'Цитата', 'Картинка', 'Видео', 'Ссылка') NOT NULL,
     class_name ENUM ('photo', 'video', 'text', 'quote', 'link')        NOT NULL,
 
@@ -64,17 +64,17 @@ CREATE TABLE content_type
  */
 CREATE TABLE posts
 (
-    id              INT UNIQUE NOT NULL AUTO_INCREMENT,
-    date_created    TIMESTAMP  NOT NULL,
+    id              INT       NOT NULL AUTO_INCREMENT,
+    date_created    TIMESTAMP NOT NULL,
     body            TEXT,
     cite_author     VARCHAR(255),
     image_uri       VARCHAR(255),
     video_url       VARCHAR(2048),
     link            VARCHAR(2048),
-    views_count     INT        NOT NULL,
+    views_count     INT       NOT NULL,
 
-    author_id       INT        NOT NULL,
-    content_type_id INT        NOT NULL,
+    author_id       INT       NOT NULL,
+    content_type_id INT       NOT NULL,
 
     PRIMARY KEY (id),
     FOREIGN KEY (author_id) REFERENCES users (id) ON DELETE CASCADE,
@@ -87,8 +87,8 @@ CREATE TABLE posts
  */
 CREATE TABLE hashtags
 (
-    id   INT AUTO_INCREMENT UNIQUE NOT NULL,
-    name VARCHAR(128) UNIQUE       NOT NULL,
+    id   INT AUTO_INCREMENT  NOT NULL,
+    name VARCHAR(128) UNIQUE NOT NULL,
 
     PRIMARY KEY (id)
 );
@@ -119,12 +119,12 @@ CREATE TABLE posts_hashtags
  */
 CREATE TABLE comments
 (
-    id        INT AUTO_INCREMENT UNIQUE NOT NULL,
-    date      TIMESTAMP                 NOT NULL,
-    body      TEXT                      NOT NULL,
+    id        INT AUTO_INCREMENT NOT NULL,
+    date      TIMESTAMP          NOT NULL,
+    body      TEXT               NOT NULL,
 
-    author_id INT                       NOT NULL,
-    post_id   INT                       NOT NULL,
+    author_id INT                NOT NULL,
+    post_id   INT                NOT NULL,
 
     PRIMARY KEY (id),
     FOREIGN KEY (author_id) REFERENCES users (id) ON DELETE CASCADE,
@@ -141,10 +141,10 @@ CREATE TABLE comments
 
 CREATE TABLE likes
 (
-    id        INT AUTO_INCREMENT UNIQUE NOT NULL,
+    id        INT AUTO_INCREMENT NOT NULL,
 
-    author_id INT                       NOT NULL,
-    post_id   INT                       NOT NULL,
+    author_id INT                NOT NULL,
+    post_id   INT                NOT NULL,
 
     PRIMARY KEY (id),
     FOREIGN KEY (author_id) REFERENCES users (id) ON DELETE CASCADE,
@@ -181,12 +181,12 @@ CREATE TABLE subscriptions
  */
 CREATE TABLE messages
 (
-    id           INT AUTO_INCREMENT UNIQUE NOT NULL,
-    date         TIMESTAMP                 NOT NULL,
-    body         TEXT                      NOT NULL,
+    id           INT AUTO_INCREMENT NOT NULL,
+    date         TIMESTAMP          NOT NULL,
+    body         TEXT               NOT NULL,
 
-    author_id    INT                       NOT NULL,
-    recipient_id INT                       NOT NULL,
+    author_id    INT                NOT NULL,
+    recipient_id INT                NOT NULL,
 
     PRIMARY KEY (id),
     FOREIGN KEY (author_id) REFERENCES users (id) ON DELETE CASCADE,
