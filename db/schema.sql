@@ -21,7 +21,7 @@ CREATE TABLE users
     id                INT                 NOT NULL AUTO_INCREMENT,
     login             VARCHAR(128) UNIQUE NOT NULL,
     email             VARCHAR(128) UNIQUE NOT NULL,
-    password          VARCHAR(128)        NOT NULL,
+    password          CHAR(64)            NOT NULL,
     registration_date TIMESTAMP           NOT NULL,
     avatar_uri        VARCHAR(255) UNIQUE,
 
