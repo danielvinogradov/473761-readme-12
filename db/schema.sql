@@ -23,7 +23,7 @@ CREATE TABLE users
     email             VARCHAR(128) UNIQUE NOT NULL,
     password          CHAR(64)            NOT NULL,
     registration_date TIMESTAMP           NOT NULL,
-    avatar_uri        VARCHAR(255) UNIQUE,
+    avatar_uri        VARCHAR(255),
 
     PRIMARY KEY (id)
 );
