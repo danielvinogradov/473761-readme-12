@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>readme: моя лента (нет публикаций)</title>
-    <link rel="stylesheet" href="css/main.css">
+    <title>readme: авторизация</title>
+    <link rel="stylesheet" href="../css/main.css">
   </head>
   <body class="page">
     <div style="display: none">
@@ -16,7 +16,7 @@
       <div class="header__wrapper container">
         <div class="header__logo-wrapper">
           <a class="header__logo-link" href="main.html">
-            <img class="header__logo" src="img/logo.svg" alt="Логотип readme" width="128" height="24">
+            <img class="header__logo" src="../img/logo.svg" alt="Логотип readme" width="128" height="24">
           </a>
           <p class="header__topic">
             micro blogging
@@ -43,7 +43,7 @@
                 </a>
               </li>
               <li class="header__my-page header__my-page--feed">
-                <a class="header__page-link header__page-link--active" title="Моя лента">
+                <a class="header__page-link" href="feed.html" title="Моя лента">
                   <span class="visually-hidden">Моя лента</span>
                 </a>
               </li>
@@ -54,49 +54,11 @@
               </li>
             </ul>
             <ul class="header__user-nav">
-              <li class="header__profile">
-                <a class="header__profile-link" href="#">
-                  <div class="header__avatar-wrapper">
-                    <img class="header__profile-avatar" src="img/userpic-medium.jpg" alt="Аватар профиля">
-                  </div>
-                  <div class="header__profile-name">
-                    <span>Антон Глуханько</span>
-                    <svg class="header__link-arrow" width="10" height="6">
-                      <use xlink:href="#icon-arrow-right-ad"></use>
-                    </svg>
-                  </div>
-                </a>
-                <div class="header__tooltip-wrapper">
-                  <div class="header__profile-tooltip">
-                    <ul class="header__profile-nav">
-                      <li class="header__profile-nav-item">
-                        <a class="header__profile-nav-link" href="#">
-                          <span class="header__profile-nav-text">
-                            Мой профиль
-                          </span>
-                        </a>
-                      </li>
-                      <li class="header__profile-nav-item">
-                        <a class="header__profile-nav-link" href="#">
-                          <span class="header__profile-nav-text">
-                            Сообщения
-                            <i class="header__profile-indicator">2</i>
-                          </span>
-                        </a>
-                      </li>
-                      <li class="header__profile-nav-item">
-                        <a class="header__profile-nav-link" href="#">
-                          <span class="header__profile-nav-text">
-                            Выход
-                          </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+              <li class="header__authorization">
+                <a class="header__user-button header__user-button--active header__authorization-button button">Вход</a>
               </li>
               <li>
-                <a class="header__post-button button button--transparent" href="adding-post.html">Пост</a>
+                <a class="header__user-button header__register-button button">Регистрация</a>
               </li>
             </ul>
           </nav>
@@ -104,96 +66,38 @@
       </div>
     </header>
 
-    <main class="page__main page__main--feed">
+    <main class="page__main page__main--login">
       <div class="container">
-        <h1 class="page__title page__title--feed">Моя лента</h1>
+        <h1 class="page__title page__title--login">Вход</h1>
       </div>
-      <div class="page__main-wrapper container">
-        <section class="feed">
-          <h2 class="visually-hidden">Лента</h2>
-          <div class="feed__main-wrapper">
-            <div class="feed__wrapper">
-
+      <section class="login container">
+        <h2 class="visually-hidden">Форма авторизации</h2>
+        <form class="login__form form" action="#" method="post">
+          <div class="login__input-wrapper form__input-wrapper">
+            <label class="login__label form__label" for="login-email">Электронная почта</label>
+            <div class="form__input-section">
+              <input class="login__input form__input" id="login-email" type="email" name="email" placeholder="Укажите эл.почту">
+              <button class="form__error-button button" type="button">!<span class="visually-hidden">Информация об ошибке</span></button>
+              <div class="form__error-text">
+                <h3 class="form__error-title">Заголовок сообщения</h3>
+                <p class="form__error-desc">Текст сообщения об ошибке, подробно объясняющий, что не так.</p>
+              </div>
             </div>
           </div>
-          <ul class="feed__filters filters">
-            <li class="feed__filters-item filters__item">
-              <a class="filters__button filters__button--active" href="#">
-                <span>Все</span>
-              </a>
-            </li>
-            <li class="feed__filters-item filters__item">
-              <a class="filters__button filters__button--photo button" href="#">
-                <span class="visually-hidden">Фото</span>
-                <svg class="filters__icon" width="22" height="18">
-                  <use xlink:href="#icon-filter-photo"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="feed__filters-item filters__item">
-              <a class="filters__button filters__button--video button" href="#">
-                <span class="visually-hidden">Видео</span>
-                <svg class="filters__icon" width="24" height="16">
-                  <use xlink:href="#icon-filter-video"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="feed__filters-item filters__item">
-              <a class="filters__button filters__button--text button" href="#">
-                <span class="visually-hidden">Текст</span>
-                <svg class="filters__icon" width="20" height="21">
-                  <use xlink:href="#icon-filter-text"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="feed__filters-item filters__item">
-              <a class="filters__button filters__button--quote button" href="#">
-                <span class="visually-hidden">Цитата</span>
-                <svg class="filters__icon" width="21" height="20">
-                  <use xlink:href="#icon-filter-quote"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="feed__filters-item filters__item">
-              <a class="filters__button filters__button--link button" href="#">
-                <span class="visually-hidden">Ссылка</span>
-                <svg class="filters__icon" width="21" height="18">
-                  <use xlink:href="#icon-filter-link"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </section>
-        <aside class="promo">
-          <article class="promo__block promo__block--barbershop">
-            <h2 class="visually-hidden">Рекламный блок</h2>
-            <p class="promo__text">
-              Все еще сидишь на окладе в офисе? Открой свой барбершоп по нашей франшизе!
-            </p>
-            <a class="promo__link" href="#">
-              Подробнее
-            </a>
-          </article>
-          <article class="promo__block promo__block--technomart">
-            <h2 class="visually-hidden">Рекламный блок</h2>
-            <p class="promo__text">
-              Товары будущего уже сегодня в онлайн-сторе Техномарт!
-            </p>
-            <a class="promo__link" href="#">
-              Перейти в магазин
-            </a>
-          </article>
-          <article class="promo__block">
-            <h2 class="visually-hidden">Рекламный блок</h2>
-            <p class="promo__text">
-              Здесь<br> могла быть<br> ваша реклама
-            </p>
-            <a class="promo__link" href="#">
-              Разместить
-            </a>
-          </article>
-        </aside>
-      </div>
+          <div class="login__input-wrapper form__input-wrapper">
+            <label class="login__label form__label" for="login-password">Пароль</label>
+            <div class="form__input-section">
+              <input class="login__input form__input" id="login-password" type="password" name="password" placeholder="Введите пароль">
+              <button class="form__error-button button button--main" type="button">!<span class="visually-hidden">Информация об ошибке</span></button>
+              <div class="form__error-text">
+                <h3 class="form__error-title">Заголовок сообщения</h3>
+                <p class="form__error-desc">Текст сообщения об ошибке, подробно объясняющий, что не так.</p>
+              </div>
+            </div>
+          </div>
+          <button class="login__submit button button--main" type="submit">Отправить</button>
+        </form>
+      </section>
     </main>
 
     <footer class="footer">
@@ -239,7 +143,7 @@
               </li>
             </ul>
             <div class="footer__copyright">
-              <a class="footer__copyright-link" href="https://htmlacademy.ru">
+              <a class="footer__copyright-link" href="#">
                 <span>Разработано HTML Academy</span>
                 <svg class="footer__copyright-logo" width="27" height="34">
                   <use xlink:href="#icon-htmlacademy"></use>
@@ -250,7 +154,5 @@
         </div>
       </div>
     </footer>
-
-    <script src="js/main.js"></script>
   </body>
 </html>
