@@ -11,27 +11,21 @@
             <li class="popular__filters-item filters__item">
                 <a class="filters__button filters__button--<?= $content_type['class_name'] ?> button" href="#">
                     <span class="visually-hidden"><?= $content_type['name'] ?></span>
-                    <?php if ($content_type['class_name'] === 'photo'): ?>
-                        <svg class="filters__icon" width="22" height="18">
-                            <use xlink:href="#icon-filter-photo"></use>
-                        </svg>
-                    <?php elseif ($content_type['class_name'] === 'video'): ?>
-                        <svg class="filters__icon" width="24" height="16">
-                            <use xlink:href="#icon-filter-video"></use>
-                        </svg>
-                    <?php elseif ($content_type['class_name'] === 'text'): ?>
-                        <svg class="filters__icon" width="20" height="21">
-                            <use xlink:href="#icon-filter-text"></use>
-                        </svg>
-                    <?php elseif ($content_type['class_name'] === 'quote'): ?>
-                        <svg class="filters__icon" width="21" height="20">
-                            <use xlink:href="#icon-filter-quote"></use>
-                        </svg>
-                    <?php elseif ($content_type['class_name'] === 'link'): ?>
-                        <svg class="filters__icon" width="21" height="18">
-                            <use xlink:href="#icon-filter-link"></use>
-                        </svg>
-                    <?php endif; ?>
+                    <svg class="filters__icon"
+                        <?php if ($content_type['class_name'] === 'photo'): ?>
+                            width="22" height="18"
+                        <?php elseif ($content_type['class_name'] === 'video'): ?>
+                            width="24" height="16"
+                        <?php elseif ($content_type['class_name'] === 'text'): ?>
+                            width="20" height="21"
+                        <?php elseif ($content_type['class_name'] === 'quote'): ?>
+                            width="21" height="20"
+                        <?php elseif ($content_type['class_name'] === 'link'): ?>
+                            width="21" height="18"
+                        <?php endif; ?>
+                    >
+                        <use xlink:href="#icon-filter-<?= $content_type['class_name'] ?>"></use>
+                    </svg>
                 </a>
             </li>
         <?php endforeach; ?>
