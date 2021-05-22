@@ -10,7 +10,7 @@ USE readme;
     5.0 Пользователь: Представляет зарегистрированного пользователя.
 
     Поля:
-        логин;
+        логин; как ФИО
         email;
         пароль: хэшированный пароль пользователя;
         дата регистрации: дата и время, когда этот пользователь завёл аккаунт;
@@ -20,7 +20,6 @@ CREATE TABLE users
 (
     id                INT                 NOT NULL AUTO_INCREMENT,
     login             VARCHAR(128) UNIQUE NOT NULL,
-    name              VARCHAR(255)        NOT NULL,
     email             VARCHAR(128) UNIQUE NOT NULL,
     password          CHAR(64)            NOT NULL,
     registration_date TIMESTAMP           NOT NULL DEFAULT CURRENT_TIMESTAMP(),
