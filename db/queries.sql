@@ -10,9 +10,9 @@ VALUES ('Текст', 'text'),
        ('Ссылка', 'link');
 
 # Добавляем тестовых пользователей
-INSERT INTO users (name, login, email, password, avatar_uri)
-VALUES ('Лариса', 'test1', 'test1@mail.com', '12345', 'userpic-larisa-small.jpg'),
-       ('Федор', 'test2', 'test2@mail.com', 'qwerty', 'userpic.jpg');
+INSERT INTO users (login, email, password, avatar_uri)
+VALUES ('Лариса Иванова', 'test1@mail.com', '12345', 'userpic-larisa-small.jpg'),
+       ('Федор Смирнов', 'test2@mail.com', 'qwerty', 'userpic.jpg');
 
 # Добавляем посты из моков
 INSERT INTO posts (title, body, cite_author, image_uri, video_url, link, author_id, content_type_id)
