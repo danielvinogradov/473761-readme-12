@@ -1,16 +1,19 @@
+<?php $content_type_active_class = 'filters__button--active'; ?>
+
 <div class="popular__filters filters">
     <b class="popular__filters-caption filters__caption">Тип контента:</b>
     <ul class="popular__filters-list filters__list">
         <li class="popular__filters-item popular__filters-item--all filters__item filters__item--all">
-            <a class="filters__button filters__button--ellipse filters__button--all filters__button--active"
-               href="#">
+            <a class="filters__button filters__button--ellipse filters__button--all <?= $content_type_active === 'any' ? $content_type_active_class : '' ?>"
+               href="?content_type=any">
                 <span>Все</span>
             </a>
         </li>
         <?php if (is_array($content_types)): ?>
             <?php foreach ($content_types as $content_type): ?>
                 <li class="popular__filters-item filters__item">
-                    <a class="filters__button filters__button--<?= $content_type['class_name'] ?> button" href="#">
+                    <a class="filters__button filters__button--<?= $content_type['class_name'] ?> button <?= $content_type_active === $content_type['class_name'] ? $content_type_active_class : ''?>"
+                       href="?content_type=<?= $content_type['class_name'] ?>">
                         <span class="visually-hidden"><?= $content_type['name'] ?></span>
                         <svg class="filters__icon"
                             <?php if ($content_type['class_name'] === 'photo'): ?>
