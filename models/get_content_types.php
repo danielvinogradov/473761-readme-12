@@ -6,7 +6,7 @@
  */
 function get_content_types($connection)
 {
-    $sql = 'SELECT * FROM content_type';
+    $sql = 'SELECT name, class_name FROM content_type';
     $result = mysqli_query($connection, $sql);
 
     if (!$result) return $result;
