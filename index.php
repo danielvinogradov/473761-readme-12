@@ -6,8 +6,8 @@ require_once('utils/format_post_date.php');
 require_once('mock/is_auth.php');
 require_once('mock/user_name.php');
 
-require_once('api/get_content_types.php');
-require_once('api/get_popular_posts.php');
+require_once('models/get_content_types.php');
+require_once('models/get_popular_posts.php');
 
 $content_type_active = $_GET['content_type'] ?? 'any';
 
