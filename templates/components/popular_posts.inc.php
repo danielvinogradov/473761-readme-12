@@ -2,7 +2,11 @@
     <?php foreach ($posts as $post_id => $post): ?>
         <article class="popular__post post post-<?= $post['type'] ?>">
             <header class="post__header">
-                <h2><?= htmlspecialchars($post['title']) ?></h2>
+                <h2>
+                    <a href="/post.php?post_id=<?= $post['id'] ?>">
+                        <?= htmlspecialchars($post['title']) ?>
+                    </a>
+                </h2>
             </header>
             <div class="post__main">
                 <!--здесь содержимое карточки-->

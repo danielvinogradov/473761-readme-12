@@ -11,7 +11,7 @@ function get_popular_posts($connection, $content_type = 'any')
     $sql .= ' INNER JOIN users u on p.author_id = u.id';
     $sql .= ' INNER JOIN content_type ct on p.content_type_id = ct.id';
     if ($content_type !== 'any') {
-        $sql .= " where ct.class_name = '$content_type'";
+        $sql .= " WHERE ct.class_name = '$content_type'";
     }
     $sql .= ' ORDER BY p.views_count';
 
