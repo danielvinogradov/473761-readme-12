@@ -11,19 +11,19 @@
             <div class="post__main">
                 <!--здесь содержимое карточки-->
                 <?php if ($post['type'] === 'quote'): ?>
-                    <?php echo include_template('components/post_quote.inc.php', ['body' => $post['body'], 'cite_author' => $post['cite_author']]); ?>
+                    <?php echo include_template('components/post_preview_quote.inc.php', ['body' => $post['body'], 'cite_author' => $post['cite_author']]); ?>
 
                 <?php elseif ($post['type'] === 'link'): ?>
-                    <?php echo include_template('components/post_link.inc.php', ['link' => $post['link'], 'title' => $post['title']]); ?>
+                    <?php echo include_template('components/post_preview_link.inc.php', ['link' => $post['link'], 'title' => $post['title']]); ?>
 
                 <?php elseif ($post['type'] === 'text'): ?>
-                    <?php echo include_template('components/post_text.inc.php', ['body' => $post['body']]); ?>
+                    <?php echo include_template('components/post_preview_text.inc.php', ['body' => $post['body']]); ?>
 
                 <?php elseif ($post['type'] === 'photo'): ?>
-                    <?php echo include_template('components/post_photo.inc.php', ['image_uri' => $post['image_uri']]); ?>
+                    <?php echo include_template('components/post_preview_photo.inc.php', ['image_uri' => $post['image_uri']]); ?>
 
                 <?php elseif ($post['type'] === 'video'): ?>
-                    <?php echo include_template('components/post_video.inc.php', ['video_url' => $post['video_url']]); ?>
+                    <?php echo include_template('components/post_preview_video.inc.php', ['video_url' => $post['video_url']]); ?>
 
                 <?php endif; ?>
 

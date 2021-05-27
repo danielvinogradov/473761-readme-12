@@ -8,15 +8,15 @@
 
                     <?php
                     if ($post['class_name'] === 'photo') {
-                        echo include_template('components/post_image_single.inc.php', ['image_uri' => $post['image_uri']]);
+                        echo include_template('components/post_single_image.inc.php', ['image_uri' => $post['image_uri']]);
                     } else if ($post['class_name'] === 'link') {
-                        echo include_template('components/post_link_single.inc.php', ['link' => $post['link'], 'title' => $post['title']]);
+                        echo include_template('components/post_single_link.inc.php', ['link' => $post['link'], 'title' => $post['title']]);
                     } else if ($post['class_name'] === 'quote') {
-                        echo include_template('components/post_quote_single.inc.php', ['body' => $post['body'], 'cite_author' => $post['cite_author']]);
+                        echo include_template('components/post_single_quote.inc.php', ['body' => $post['body'], 'cite_author' => $post['cite_author']]);
                     } else if ($post['class_name'] === 'text') {
-                        echo include_template('components/post_text_single.inc.php', ['body' => $post['body']]);
+                        echo include_template('components/post_single_text.inc.php', ['body' => $post['body']]);
                     } else if ($post['class_name'] === 'video') {
-                        echo include_template('components/post_video_single.inc.php', ['video_url' => $post['video_url']]);
+                        echo include_template('components/post_single_video.inc.php', ['video_url' => $post['video_url']]);
                     }
                     ?>
 
