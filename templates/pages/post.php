@@ -20,13 +20,19 @@
                     }
                     ?>
 
-                    <?= include_template('components/post_indicators.php'); ?>
-                    <?= include_template('components/post_tags.inc.php'); ?>
+                    <?= include_template('components/post_indicators.inc.php',
+                        [
+                            'likes_count' => $post['likes_count'],
+                            'comments_count' => $post['comments_count'],
+                            'reposts_count' => 0,
+                            'views_count' => $post['views_count']
+                        ]); ?>
+                    <?= include_template('components/post_tags.inc.php', ['hashtags' => $hashtags]); ?>
                     <?= include_template('components/post_comments.inc.php'); ?>
 
                 </div>
 
-                <?= include_template('components/post_single_author.inc.php'); ?>
+                <?= include_template('components/post_single_author.inc.php', ['author' => $author]); ?>
 
             </div>
         </section>
